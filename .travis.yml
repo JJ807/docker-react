@@ -12,5 +12,15 @@ script:
 after_script:
   - exit 0
 
-after_success:
-  - echo "hurray!"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket-name: "elasticbeanstalk-us-east-1-403548837988"
+  bucket-path: "docker-react"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
