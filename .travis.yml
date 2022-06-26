@@ -7,3 +7,6 @@ before_install:
 
 script:
   - docker run jj/docker-react npm run test -- --coverage
+
+after-success:
+  - exit 0
