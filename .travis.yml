@@ -5,7 +5,7 @@ before_install:
   - docker build -t jj807/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true jj807/docker-react npm run test -- --coverage
+  - docker run -e CI=true jj807/docker-react npm run test
 
 language: minimal
 deploy:
